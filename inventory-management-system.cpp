@@ -11,11 +11,11 @@ private:
 public:
     InventoryItem(int id, string name) : id(id), name(name) {}                                                 // constructors
 
-    int getId() const {                                                                                       //get() manipulators
+    int getId() const {                                                                                       //getter function
         return id;
     }
 
-    void setId(int id) {                                                                                 //set() manipulators
+    void setId(int id) {                                                                                 //setter function
         this->id = id;
     }
 
@@ -35,7 +35,7 @@ private:
     int quantity;
 
 public:
-    Product(int id, string name, string category, double price, int quantity)
+    Product(int id, string name, string category, double price, int quantity)                                //constructor
         : InventoryItem(id, name), category(category), price(price), quantity(quantity) {}
 
     string getCategory() const {
@@ -72,7 +72,7 @@ public:
         bool found = false;
         for (auto& p : products) {
             if (p.getId() == product.getId()) {
-                cout << "Id already Exist." << endl;
+                cout << "Id already Exist." << endl;                                                                    //manipulator
                 found = true;
                 break;
             }
